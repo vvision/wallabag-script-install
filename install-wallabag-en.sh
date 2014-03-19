@@ -2,13 +2,13 @@
 #TODO : Check if previous poche installation
 #TODO : MySQL/MariaDB/PostgreSQL installation
 
-echo -e "poche installation in this folder...\nStarted download"
-wget "http://inthepo.ch/e/latest"
+echo -e "wallabag installation in this folder...\nStarted download"
+wget "wllbg.org/latest"
 echo -e "Finished Download"
-unzip latest-poche
+unzip latest
 echo -e "Finished unpacking"
-mv poche-* poche
-cd poche
+mv wallabag-* wallabag
+cd wallabag
 #Twig Install
 echo -e "Twig installation, this may take some time."
 curl -s http://getcomposer.org/installer | php
@@ -48,9 +48,9 @@ if [ $db = 1 ]
 then 
 	rm -r install/
 fi
-rm -r ../latest-poche
+rm -r ../latest
 echo "End of installation script !"
 if [ $db != 1 ] 
 then
-	echo "You still need to setup the database system before starting using poche."
+	echo "You still need to setup the database system before starting using wallabag."
 fi
